@@ -1,7 +1,18 @@
 package main
 
-import "fmt"
+import (
+    "parking/screens"
+	"fyne.io/fyne/v2"
+	"fyne.io/fyne/v2/app"
+)
 
 func main() {
-    fmt.Println("Hola, mundo!")
+	a := app.New()
+	w := a.NewWindow("Parking")
+
+	w.CenterOnScreen()
+	w.SetFixedSize(true)
+	w.Resize(fyne.NewSize(1000, 800))
+	screens.NewScene(w)
+	w.ShowAndRun()
 }
